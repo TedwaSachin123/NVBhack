@@ -1,0 +1,33 @@
+specVersion: 0.0.4
+schema:
+  file: schema.graphql
+features:
+  - fullTextSearch
+  - ipfsOnEthereumContracts
+dataSources:
+  - kind: ethereum
+    name: Token
+    network: mumbai
+    source:
+      address: "0xA8D09FDE15D8910e7f3e921778eB86a6DEde33a8"
+      abi: Token
+      startBlock: 27983751
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Post
+        - Comment
+        - Answer
+      abis:
+        - name: Token
+          file: Token\abis\Token.json
+      eventHandlers:
+        - event: PostCreated(uint256,string)
+          handler: handlePostCreated
+        - event: PostComment(uint256,string)
+          handler: handlePostComment
+        - event: PostAnswer(uint256,string)
+          handler: handlePostAnswer
+      file: Token\Token.wasm

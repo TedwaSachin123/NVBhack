@@ -1,0 +1,35 @@
+type Post @entity {
+  id: ID!
+  title: String!
+  body: String!
+  hash: String!
+  by: String!
+  tags: [String!]!
+  createdAtTimestamp: BigInt!
+}
+
+type Comment @entity {
+  id: ID!
+  Postid: BigInt!
+  comment: String!
+  createdAtTimestamp: BigInt!
+  by: String!
+}
+
+type Answer @entity {
+  id: ID!
+  Postid: BigInt!
+  answer: String!
+  createdAtTimestamp: BigInt!
+  by: String!
+}
+
+type _Schema_
+  @fulltext(
+    name: "blockvoice"
+    language: en
+    algorithm: rank
+    include: [{ entity: "Post", fields: [{ name: "title" }, { name: "body" }] },
+    { entity: "Answer", fields: [{ name: "answer" }] },
+    { entity: "Comment", fields: [{ name: "comment" }] }]
+  )
