@@ -5,10 +5,11 @@ import {
   Route,
   // Redirect,
 } from "react-router-dom";
-import StackOverflow from "./components/blockvoice";
+import Blockvoice from "./components/blockvoice";
 import Header from "./components/Header";
 import AddQuestion from "./components/AddQuestion";
 import ViewQuestion from "./components/ViewQuestion";
+
 
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/" component={StackOverflow} />
+          <Route exact path="/" component={Blockvoice} />
           <Route exact path="/add-question" component={AddQuestion} />
+          <Route exact path="/create-cource" component={AddQuestion} />
           <Route exact path="/question/:id/:title" component={ViewQuestion} />
         </Switch>
       </Router>

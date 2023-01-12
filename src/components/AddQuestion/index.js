@@ -4,7 +4,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // ES6
 import "./index.css";
 import Editor from "react-quill/lib/toolbar";
-
+import Sidebar from "../blockvoice/Sidebar"
 import { TagsInput } from "react-tag-input-component";
 import { useHistory } from "react-router-dom";
 import { Connect } from '../../Connect';
@@ -145,6 +145,9 @@ function Index() {
   //   // }
   // };
   return (
+    <div className="stack-index">
+    <div className="stack-index-content">
+    <Sidebar />
     <div className="add-question">
       <div className="add-question-container">
         <div className="head-title">
@@ -208,6 +211,8 @@ function Index() {
           Add your question
         </button>
       </div>
+    </div>
+    </div>
     </div>
   );
 }

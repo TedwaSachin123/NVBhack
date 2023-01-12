@@ -1,6 +1,6 @@
 .add-question {
   display: flex;
-  width: 100%;
+  flex: 0.6;
   background-color: rgba(238, 238, 238, 0.568);
 
   height: 100vh;

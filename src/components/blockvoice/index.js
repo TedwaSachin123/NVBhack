@@ -1,5 +1,5 @@
 import React from "react";
-//import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar";
 import "./css/index.css";
 import Main from "./Main";
 //import axios from "axios";
@@ -19,9 +19,9 @@ function Index() {
   return (
     <div className="stack-index">
       <div className="stack-index-content">
-        <Main 
+      <Sidebar />
+        <Main />
         
-        />
       </div>
     </div>
   );
